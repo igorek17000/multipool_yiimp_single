@@ -47,8 +47,13 @@ echo -e " Updating system packages...$COL_RESET"
 hide_output sudo apt-get update
 echo -e "$GREEN Done...$COL_RESET"
 echo -e " Upgrading system packages...$COL_RESET"
+if [ ! -f /boot/grub/menu.lst ]; then
+# apt_get_quiet upgrade
+else
 sudo rm /boot/grub/menu.lst
 hide_output sudo update-grub-legacy-ec2 -y
+# apt_get_quiet upgrade
+fi
 echo -e "$GREEN Done...$COL_RESET"
 echo -e " Running Dist-Upgrade...$COL_RESET"
 apt_get_quiet dist-upgrade
