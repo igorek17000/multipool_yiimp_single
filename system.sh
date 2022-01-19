@@ -47,21 +47,21 @@ echo -e " Updating system packages...$COL_RESET"
 hide_output sudo apt-get update
 echo -e "$GREEN Done...$COL_RESET"
 echo -e " Upgrading system packages...$COL_RESET"
-if [ ! -f /boot/grub/menu.lst ]; then
-apt_get_quiet upgrade
-else
+# if [ ! -f /boot/grub/menu.lst ]; then
+# apt_get_quiet upgrade
+# else
 sudo rm /boot/grub/menu.lst
 hide_output sudo update-grub-legacy-ec2 -y
-apt_get_quiet upgrade
-fi
+# apt_get_quiet upgrade
+# fi
 echo -e "$GREEN Done...$COL_RESET"
-echo -e " Running Dist-Upgrade...$COL_RESET"
-apt_get_quiet dist-upgrade
+# echo -e " Running Dist-Upgrade...$COL_RESET"
+# apt_get_quiet dist-upgrade
 echo -e "$GREEN Done...$COL_RESET"
-echo -e " Running Autoremove...$COL_RESET"
-apt_get_quiet autoremove
+# echo -e " Running Autoremove...$COL_RESET"
+# apt_get_quiet autoremove
 
-echo -e "$GREEN Done...$COL_RESET"
+# echo -e "$GREEN Done...$COL_RESET"
 echo -e " Installing Base system packages...$COL_RESET"
 apt_install python3 python3-dev python3-pip \
 wget curl git sudo coreutils bc \
@@ -128,7 +128,7 @@ libnghttp2-dev librtmp-dev libssh2-1 libssh2-1-dev libldap2-dev libidn11-dev lib
 else
 apt_install php7.4-fpm php7.4-opcache php7.4-fpm php7.4 php7.4-common php7.4-gd \
 php7.4-memcache php7.4-memcached memcached \
-php7.4-mysql php7.4-imap php7.4-cli php7.4-cgi \
+php7.4-mysql php7.4-dev php7.4-imap php7.4-cli php7.4-cgi \
 php-pear php-auth-sasl mcrypt imagemagick libruby \
 php7.4-curl php7.4-intl php7.4-pspell php7.3-recode php7.4-sqlite3 \
 php7.4-tidy php7.4-xmlrpc php7.4-xsl memcached php-memcache \
