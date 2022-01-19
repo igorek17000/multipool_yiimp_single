@@ -34,7 +34,6 @@ echo -e " Installing Ondrej PHP PPA...$COL_RESET"
 if [ ! -f /etc/apt/sources.list.d/ondrej-php-bionic.list ]; then
 hide_output sudo add-apt-repository -y ppa:ondrej/php
 fi
-hide_output sudo apt-get -y install php-pear php-dev php-mysql
 echo -e "$GREEN Done...$COL_RESET"
 # MariaDB
 
@@ -128,6 +127,7 @@ automake cmake gnupg2 ca-certificates lsb-release nginx certbot libsodium-dev \
 libnghttp2-dev librtmp-dev libssh2-1 libssh2-1-dev libldap2-dev libidn11-dev libpsl-dev libkrb5-dev
 else
 apt_install php7.3-fpm php7.3-opcache php7.3-fpm php7.3 php7.3-common php7.3-gd \
+php-pear php-dev php-mysql php-curl \
 php7.3-memcache php7.3-memcached memcached \
 php7.3-mysql php7.3-imap php7.3-cli php7.3-cgi \
 php-pear php-auth-sasl mcrypt imagemagick libruby \
