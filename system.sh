@@ -34,6 +34,7 @@ echo -e " Installing Ondrej PHP PPA...$COL_RESET"
 if [ ! -f /etc/apt/sources.list.d/ondrej-php-bionic.list ]; then
 hide_output sudo add-apt-repository -y ppa:ondrej/php
 fi
+hide_output sudo apt-get -y install php-pear php-dev php-mysql
 echo -e "$GREEN Done...$COL_RESET"
 # MariaDB
 
