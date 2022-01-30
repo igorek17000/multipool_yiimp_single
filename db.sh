@@ -10,7 +10,7 @@ source $STORAGE_ROOT/yiimp/.wireguard.conf
 fi
 
 echo -e " Installing MariaDB...$COL_RESET"
-MARIADB_VERSION='10.3'
+MARIADB_VERSION='10.6'
 sudo debconf-set-selections <<< "maria-db-$MARIADB_VERSION mysql-server/root_password password $DBRootPassword"
 sudo debconf-set-selections <<< "maria-db-$MARIADB_VERSION mysql-server/root_password_again password $DBRootPassword"
 apt_install mariadb-server mariadb-client
