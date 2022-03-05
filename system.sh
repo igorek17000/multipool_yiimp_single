@@ -126,13 +126,13 @@ build-essential libtool autotools-dev automake pkg-config libevent-dev bsdmainut
 automake cmake gnupg2 ca-certificates lsb-release nginx certbot libsodium-dev \
 libnghttp2-dev librtmp-dev libssh2-1 libssh2-1-dev libldap2-dev libidn11-dev libpsl-dev libkrb5-dev
 else
-apt_install php7.2-fpm php7.2-opcache php7.2-fpm php7.2 php7.2-common php7.2-gd \
-php7.2-memcache php7.2-memcached memcached \
-php7.2-mysql php7.2-imap php7.2-cli php7.2-cgi \
+apt_install php7.3-fpm php7.3-opcache php7.3-fpm php7.3 php7.3-common php7.3-gd \
+php7.3-memcache php7.3-memcached memcached \
+php7.3-mysql php7.3-imap php7.3-cli php7.3-cgi \
 php-pear php-auth-sasl mcrypt imagemagick libruby \
-php7.2-curl php7.2-intl php7.2-pspell php7.2-recode php7.2-sqlite3 \
-php7.2-tidy php7.2-xmlrpc php7.2-xsl memcached php7.2-memcache \
-php7.2-imagick php7.2-gettext php7.2-zip php7.2-mbstring \
+php7.3-curl php7.3-intl php7.3-pspell php7.3-recode php7.3-sqlite3 \
+php7.3-tidy php7.3-xmlrpc php7.3-xsl memcached php7.3-memcache \
+php7.3-imagick php7.3-gettext php7.3-zip php7.3-mbstring \
 fail2ban ntpdate python3 python3-dev python3-pip \
 curl git sudo coreutils pollinate unzip unattended-upgrades cron \
 pwgen libgmp3-dev libmysqlclient-dev libcurl4-gnutls-dev \
