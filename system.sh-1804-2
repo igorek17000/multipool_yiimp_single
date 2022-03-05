@@ -39,7 +39,7 @@ echo -e "$GREEN Done...$COL_RESET"
 
 echo -e " Installing MariaDB Repository...$COL_RESET"
 hide_output sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
-  sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://mirror.one.com/mariadb/repo/10.6/ubuntu bionic main' >/dev/null 2>&1
+sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://mirror.one.com/mariadb/repo/10.3/ubuntu bionic main' >/dev/null 2>&1
 echo -e "$GREEN Done...$COL_RESET"
 # Upgrade System Files
 
@@ -47,21 +47,21 @@ echo -e " Updating system packages...$COL_RESET"
 hide_output sudo apt-get update
 echo -e "$GREEN Done...$COL_RESET"
 echo -e " Upgrading system packages...$COL_RESET"
-# if [ ! -f /boot/grub/menu.lst ]; then
-# apt_get_quiet upgrade
-# else
+if [ ! -f /boot/grub/menu.lst ]; then
+apt_get_quiet upgrade
+else
 sudo rm /boot/grub/menu.lst
 hide_output sudo update-grub-legacy-ec2 -y
-# apt_get_quiet upgrade
-# fi
+apt_get_quiet upgrade
+fi
 echo -e "$GREEN Done...$COL_RESET"
-# echo -e " Running Dist-Upgrade...$COL_RESET"
-# apt_get_quiet dist-upgrade
+echo -e " Running Dist-Upgrade...$COL_RESET"
+apt_get_quiet dist-upgrade
 echo -e "$GREEN Done...$COL_RESET"
-# echo -e " Running Autoremove...$COL_RESET"
-# apt_get_quiet autoremove
+echo -e " Running Autoremove...$COL_RESET"
+apt_get_quiet autoremove
 
-# echo -e "$GREEN Done...$COL_RESET"
+echo -e "$GREEN Done...$COL_RESET"
 echo -e " Installing Base system packages...$COL_RESET"
 apt_install python3 python3-dev python3-pip \
 wget curl git sudo coreutils bc \
@@ -128,7 +128,7 @@ libnghttp2-dev librtmp-dev libssh2-1 libssh2-1-dev libldap2-dev libidn11-dev lib
 else
 apt_install php7.2-fpm php7.2-opcache php7.2-fpm php7.2 php7.2-common php7.2-gd \
 php7.2-memcache php7.2-memcached memcached \
-php7.2-mysql php7.2-dev php7.2-imap php7.2-cli php7.2-cgi \
+php7.2-mysql php7.2-imap php7.2-cli php7.2-cgi \
 php-pear php-auth-sasl mcrypt imagemagick libruby \
 php7.2-curl php7.2-intl php7.2-pspell php7.2-recode php7.2-sqlite3 \
 php7.2-tidy php7.2-xmlrpc php7.2-xsl memcached php7.2-memcache \
