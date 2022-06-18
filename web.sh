@@ -57,7 +57,7 @@ server {
 				return 444;
 		}
 		listen 80;
-		# listen [::]:80;
+		listen [::]:80;
 		server_name '"${DomainName}"';
 		root "/var/www/'"${DomainName}"'/html/web";
 		index index.php;
@@ -182,7 +182,7 @@ server {
 				return 444;
 		}
 		listen 80;
-		# listen [::]:80;
+		listen [::]:80;
 		server_name '"${DomainName}"';
 		# enforce https
 		return 301 https://$server_name$request_uri;
@@ -196,7 +196,7 @@ server {
 				return 444;
 		}
 		listen 443 ssl http2;
-		# listen [::]:443 ssl http2;
+		listen [::]:443 ssl http2;
 		server_name '"${DomainName}"';
 
 		root /var/www/'"${DomainName}"'/html/web;
@@ -321,7 +321,7 @@ server {
 				return 444;
 		}
 		listen 80;
-		# listen [::]:80;
+		listen [::]:80;
 		server_name '"${DomainName}"' www.'"${DomainName}"';
 		root "/var/www/'"${DomainName}"'/html/web";
 		index index.php;
@@ -445,7 +445,7 @@ server {
 				return 444;
 		}
 		listen 80;
-		# listen [::]:80;
+		listen [::]:80;
 		server_name '"${DomainName}"' www.'"${DomainName}"';
 		# enforce https
 		return 301 https://$server_name$request_uri;
@@ -459,7 +459,7 @@ server {
 				return 444;
 		}
 		listen 443 ssl http2;
-		# listen [::]:443 ssl http2;
+		listen [::]:443 ssl http2;
 		server_name '"${DomainName}"' www.'"${DomainName}"';
 
 		root /var/www/'"${DomainName}"'/html/web;
